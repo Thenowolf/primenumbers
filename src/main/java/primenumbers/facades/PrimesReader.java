@@ -19,7 +19,7 @@ public class PrimesReader{
 		List<String> primesList = new ArrayList<String>();
 		
 		if(column == null || file == null ){
-			logger.error("Null arguments passed...");
+			logger.error("Null arguments..");
 			return primesList;
 		}
 		
