@@ -1,6 +1,7 @@
 package primenumbers.facades;
 
 import java.io.IOException;
+import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ public class PrimesReader{
 			}
 
 			for (Map.Entry<Integer,List<String>> entry : data.entrySet()) {
-				if(entry.getValue().get(column).matches("[0-9]+"))
+				if(entry.getValue().get(column).matches("[0-9]+") && BigInteger.valueOf(Long.MAX_VALUE).compareTo(new BigInteger(entry.getValue().get(column))) > 0)
 					if(primesValidator.isPrime(Long.parseLong(entry.getValue().get(column)))) {
 						primesList.add(entry.getValue().get(column));
 					}

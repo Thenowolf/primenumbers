@@ -35,17 +35,18 @@ public class PrimesReaderTest {
 		final ExcelReader reader = mock(ExcelReader.class);
 		Map<Integer, List<String>> data = new HashMap<>();
 		
-		for(int i = 0; i < 7; i++) {
+		for(int i = 0; i < 8; i++) {
 			data.put(i, new ArrayList<>());
 		}
 		
 		data.get(0).add("8663621");
-		data.get(1).add("2434699");
-		data.get(2).add("7581466577");
-		data.get(3).add("string");
-		data.get(4).add("-422");
-		data.get(5).add(" 211");
-		data.get(6).add("65132114");
+		data.get(1).add("7581466577654641164867464");
+		data.get(2).add("2434699");
+		data.get(3).add("7581466577");
+		data.get(4).add("string");
+		data.get(5).add("-422");
+		data.get(6).add(" 211");
+		data.get(7).add("65132114");
 		
 		try {
 			when(reader.readExcel("soubor.xlsx")).thenReturn(data);
